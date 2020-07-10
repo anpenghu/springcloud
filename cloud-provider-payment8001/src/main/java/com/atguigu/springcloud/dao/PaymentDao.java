@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 public interface PaymentDao {
 	@Options(useGeneratedKeys = true,keyProperty = "id")
 	@Insert("insert into payment(serial) values(#{serial})")
@@ -13,4 +15,6 @@ public interface PaymentDao {
 	
 	@Select("select * from payment where id = #{id}")
 	Payment get(@Param("id") Long id);
+	
+	List<Payment> getAll();
 }

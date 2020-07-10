@@ -27,6 +27,6 @@ spring:
 
 mybatis:
   #mapper文件的位置,在mapper包下
-  mapperLocations: classpath:mappper/*.xml
+  mapperLocations: classpath:mapper/*.xml
   #实体类所在的包
   type-aliases-package: com.atguigu.springcloud.entities
