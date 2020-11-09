@@ -3,15 +3,14 @@ package com.atguigu.springcloud.controller;
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import com.atguigu.springcloud.service.PaymentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@Slf4j
 public class PaymentController {
 	
 	@Autowired
@@ -28,9 +27,10 @@ public class PaymentController {
 	}
 	
 	@PostMapping("/payment")
-	public CommonResult create(Payment payment){
+	public CommonResult create(@RequestBody Payment payment){
 		int i = paymentService.create(payment);
 		if (i == 1){
+			log.info("插入");
 			return new CommonResult(200,"插入数据成功",payment);
 		} else {
 			return new CommonResult(500,"插入失败",null);
