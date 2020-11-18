@@ -41,9 +41,9 @@ public class PaymentController {
 	public CommonResult getAll(){
 		List<Payment> all = paymentService.getAll();
 		if (all != null) {
-			return new CommonResult(200,"查询成功",all);
+			return new CommonResult(200,"查询所有成功",all);
 		} else {
-			return new CommonResult(500,"查询失败",null);
+			return new CommonResult(500,"查询所有失败",null);
 		}
 	}
 }
