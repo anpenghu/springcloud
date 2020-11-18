@@ -1,0 +1,13 @@
+server:
+  port: 7002
+
+#####eureka注册信息(两个eureka相互注册)
+eureka:
+  instance:
+    hostname: eureka7002.com #eureka服务端实例名称
+  client:
+    register-with-eureka: false #表示不像注册中心注册自己
+    fetch-registry: false #false表示自己就是注册中心，我的职责就是维护服务实例,并不区检索服务
+    service-url:
+      #这里配置另一个eureka的地址,如果有多个eureka服务器,则配置多个
+      defaultZone: http://eureka7001.com:7001/eureka/
