@@ -97,7 +97,7 @@ Desktop.ini
  
 ### linux ###
 .*
-!.gitignore
+!git.gitignore
 *~
  
 ## mac os x

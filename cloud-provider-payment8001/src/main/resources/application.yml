@@ -24,6 +24,9 @@ spring:
       test-on-return: false
       pool-prepared-statements: false
       validation-query: SELECT 1
+  devtools:
+    restart:
+      enabled: true #开启热部署
 
 eureka:
   client:
@@ -47,3 +50,4 @@ mybatis:
   mapperLocations: classpath:mapper/*.xml
   #实体类所在的包
   type-aliases-package: com.atguigu.springcloud.entities
+

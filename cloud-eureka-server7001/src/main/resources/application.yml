@@ -27,5 +27,5 @@ eureka:
     #因为它可能是由于网络的原因导致暂时无法获取心跳,如果超过90s后依然无法获取到该服务的心跳,那么就会删除该服务
     #关闭自我保护后,在获取不到某个服务的心跳时,会直接删除该服务
     enable-self-preservation: false
-    #表示没2秒获取一次注册服务的心跳
+    #eureka server清理无效节点的时间间隔，默认60000毫秒，即60秒
     eviction-interval-timer-in-ms: 2000
