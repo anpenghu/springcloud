@@ -18,4 +18,14 @@ eureka:
     register-with-eureka: false #表示不像注册中心注册自己
     fetch-registry: false #false表示自己就是注册中心，我的职责就是维护服务实例,并不区检索服务
     service-url:
-      defaultZone: http://eureka7002.com:7002/eureka/
+      #集群
+      #defaultZone: http://eureka7002.com:7002/eureka/
+      #单机
+      defaultZone: http://eureka7001.com:7001/eureka/
+  server:
+    #关闭自我保护,自我保护功能可以在某个服务出现问题时不会立即删除该服务,而是保存一定的时间(90s),
+    #因为它可能是由于网络的原因导致暂时无法获取心跳,如果超过90s后依然无法获取到该服务的心跳,那么就会删除该服务
+    #关闭自我保护后,在获取不到某个服务的心跳时,会直接删除该服务
+    enable-self-preservation: false
+    #表示没2秒获取一次注册服务的心跳
+    eviction-interval-timer-in-ms: 2000
